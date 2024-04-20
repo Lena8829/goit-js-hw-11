@@ -4,6 +4,7 @@ import SimpleLightbox from 'simplelightbox'; //
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 const gallery = document.querySelector('.gallery');
+const lightbox = new SimpleLightbox('.gallery a');
 
 // відображення картинок---------------------------------------------------------------------
 export function renderImages(images) {
@@ -55,8 +56,7 @@ function createImageCard(image) {
 }
 
 // відкриття великого зображення---------------------------------------------------------------
-export function openModal(image) {
-  const lightbox = new SimpleLightbox('.gallery a');
+function openModal(image) {
   lightbox.open();
   lightbox.refresh();
 }
