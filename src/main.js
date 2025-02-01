@@ -19,37 +19,35 @@ function handleSubmit(event) {
     return;
   }
 
-  showLoader();
+  loader.classList.remove('hidden');
 
   searchImages(query)
     .then(images => {
-      hideLoader();
-
-      if (images.length === 0) {
+      if (images.hits.length === 0) {
         iziToast.error({
           title: 'Error',
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
+          timeout: 2000,
         });
       } else {
-        renderImages(images);
+        renderImages(images.hits);
       }
+
+      loader.classList.add('hidden');
     })
     .catch(error => {
-      hideLoader();
-      console.error(error);
+      loader.classList.add('hidden');
+
+      console.log(error);
     });
+  searchForm.reset();
 }
 
-hideLoader();
-
-//-----------------------------------------------------------------------------------------
-function showLoader() {
-  loader.style.display = 'block';
-}
-// Функция для скрытия индикатора загрузки
-function hideLoader() {
-  loader.style.display = 'none';
-}
-//---------------------------------------------------------------------------------------
+// searchImages('pug')
+//   .then(images => {
+//     const markup = renderImages(images.hits);
+//     console.log(markup);
+//   })
+//   .catch(error => console.log(error));

@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/favicon.svg" /> -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vanilla App Template</title>
   <link rel="stylesheet" href="./css/styles.css" />
@@ -14,13 +14,13 @@
 
   <form class="search-form">
 
-    <input type="text" class="search-input" placeholder="Search images...">
+    <input type="text" class="search-input" placeholder="Search images..." required>
 
     <button type="submit">Search</button>
   </form>
 
   <!-- індикатор завантаження -->
-  <div class="loader"></div>
+  <div class="loader hidden"></div>
 
   <!-- відображ. галереї -->
   <div id="gallery" class="gallery"></div>

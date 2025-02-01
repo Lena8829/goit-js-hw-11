@@ -35,6 +35,11 @@
   box-shadow: 2px -6px 12px 0px inset rgba(0, 0, 0, 0.7);
   animation: l4 0.5s infinite steps(5) alternate;
 }
+
+.hidden {
+  display: none;
+}
+
 @keyframes l4 {
   0% {
     clip-path: polygon(
@@ -58,4 +63,10 @@
       100% 35%
     );
   }
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
 }
