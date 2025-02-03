@@ -29,7 +29,7 @@ function handleSubmit(event) {
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
-          timeout: 2000,
+          timeout: 20000,
         });
       } else {
         renderImages(images.hits);
