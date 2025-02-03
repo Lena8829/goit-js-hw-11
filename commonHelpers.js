@@ -11,5 +11,5 @@ import{S as m,i as h}from"./assets/vendor-0fc460d7.js";(function(){const t=docum
       </a>
       </div>
 
-    `).join("");c.insertAdjacentHTML("beforeend",t),g.refresh()},l=document.querySelector(".search-form"),L=document.querySelector(".search-input"),a=document.querySelector(".loader");l.addEventListener("submit",S);function S(n){n.preventDefault();const t=L.value.trim();t!==""&&(a.classList.remove("hidden"),y(t).then(o=>{o.hits.length===0?h.error({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight",timeout:2e3}):b(o.hits),a.classList.add("hidden")}).catch(o=>{a.classList.add("hidden"),console.log(o)}),l.reset())}
+    `).join("");c.insertAdjacentHTML("beforeend",t),g.refresh()},l=document.querySelector(".search-form"),L=document.querySelector(".search-input"),a=document.querySelector(".loader");l.addEventListener("submit",S);function S(n){n.preventDefault();const t=L.value.trim();t!==""&&(a.classList.remove("hidden"),y(t).then(o=>{o.hits.length===0?h.error({title:"Error",message:"Sorry, there are no images matching your search query. Please try again!",position:"topRight",timeout:2e4}):b(o.hits),a.classList.add("hidden")}).catch(o=>{a.classList.add("hidden"),console.log(o)}),l.reset())}
 //# sourceMappingURL=commonHelpers.js.map
