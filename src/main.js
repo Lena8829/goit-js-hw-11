@@ -3,9 +3,12 @@ import { renderImages } from './js/render-functions.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
 
+//-------------------------------------------------------------------------------------------------
+
 const searchForm = document.querySelector('.search-form');
 const searchInput = document.querySelector('.search-input');
 const loader = document.querySelector('.loader');
+const backdrop = document.querySelector('.backdrop');
 
 //-------------------------------------------------------------------------------------------------
 
@@ -13,6 +16,7 @@ searchForm.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
+  gallery.innerHTML = ''; // Очищуєм галерею перед додаванням нових зображ.
 
   const query = searchInput.value.trim();
   if (query === '') {
@@ -20,6 +24,7 @@ function handleSubmit(event) {
   }
 
   loader.classList.remove('hidden');
+  backdrop.classList.remove('hidden');
 
   searchImages(query)
     .then(images => {
@@ -36,6 +41,7 @@ function handleSubmit(event) {
       }
 
       loader.classList.add('hidden');
+      backdrop.classList.add('hidden');
     })
     .catch(error => {
       loader.classList.add('hidden');
@@ -45,6 +51,7 @@ function handleSubmit(event) {
   searchForm.reset();
 }
 
+// // testing
 // searchImages('pug')
 //   .then(images => {
 //     const markup = renderImages(images.hits);

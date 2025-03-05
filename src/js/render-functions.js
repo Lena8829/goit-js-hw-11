@@ -8,8 +8,6 @@ const lightbox = new SimpleLightbox('.gallery a', {});
 
 // відображення картинок---------------------------------------------------------------------
 export const renderImages = images => {
-  gallery.innerHTML = ''; // Очищуєм галерею перед додаванням нових зображ.
-
   const markup = images
     .map(
       ({
