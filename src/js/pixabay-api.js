@@ -15,8 +15,6 @@ export const searchImages = query => {
 
   const url = `${BASE_URL}?${urlParams}`;
 
-  // const url = `${BASE_URL}?key=${API_KEY}&q=${query}&image_type=photo&orientation=horizontal&safesearch=true`;
-
   return fetch(url)
     .then(response => {
       if (!response.ok) {

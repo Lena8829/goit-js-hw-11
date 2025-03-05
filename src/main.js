@@ -1,7 +1,8 @@
-import { searchImages } from './js/pixabay-api.js';
-import { renderImages } from './js/render-functions.js';
 import iziToast from 'izitoast';
 import 'izitoast/dist/css/iziToast.min.css';
+
+import { searchImages } from './js/pixabay-api.js';
+import { renderImages } from './js/render-functions.js';
 
 //-------------------------------------------------------------------------------------------------
 
@@ -34,7 +35,7 @@ function handleSubmit(event) {
           message:
             'Sorry, there are no images matching your search query. Please try again!',
           position: 'topRight',
-          timeout: 20000,
+          timeout: 5000,
         });
       } else {
         renderImages(images.hits);
@@ -44,8 +45,6 @@ function handleSubmit(event) {
       backdrop.classList.add('hidden');
     })
     .catch(error => {
-      loader.classList.add('hidden');
-
       console.log(error);
     });
   searchForm.reset();
